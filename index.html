@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yameena Abbas | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Philosopher&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background-color: #1e1e1e;
+      color: white;
+    }
+
+    /* Add universal text hover effect */
+    a, span, h1, h2, h3, h4, p {
+      transition: color 0.3s ease;
+    }
+    
+    a:hover, span:hover, h1:hover, h2:hover, h3:hover, h4:hover, p:hover {
+      color: #00adb5 !important;
+    }
+
+    /* Section Heading Styles */
+    .section-heading {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      position: relative;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+    
+
+    
+    .section-heading::after {
+      content: '';
+      position: absolute;
+      width: 60%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #00adb5, transparent);
+      bottom: -10px;
+      left: 20%;
+      transition: all 0.3s ease;
+    }
+    
+    .section-heading:hover {
+      transform: translateY(-3px);
+    }
+    
+    .section-heading:hover::after {
+      background: linear-gradient(90deg, transparent, #00adb5, #00adb5, transparent);
+    }
+
+    nav {
+      background-color: #1e1e1e;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+       nav, header, section {
+      text-align: center;
+    }
+
+
+    .logo {
+      position: absolute;
+      left: 20px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: white;
+      font-family: 'Philosopher', sans-serif;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00adb5;
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px 40px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+    }
+ .skills-section, .education-section, .experience-section {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    
+    .education-section {
+      background-color: #1e1e1e;
+    }
+
+    .skills-section h2, 
+    .education-section h2,
+    .experience-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .skills-section h2::after,
+    .education-section h2::after,
+    .experience-section h2::after {
+      content: '';
+      position: absolute;
+      width: 60%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #00adb5, transparent);
+      bottom: -10px;
+      left: 20%;
+      transition: all 0.3s ease;
+    }
+    
+    .skills-section h2:hover,
+    .education-section h2:hover,
+    .experience-section h2:hover {
+      transform: translateY(-3px);
+    }
+    
+    .skills-section h2:hover::after,
+    .education-section h2:hover::after,
+    .experience-section h2:hover::after {
+      background: linear-gradient(90deg, transparent, #00adb5, #00adb5, transparent);
+    }
+
+    .skills-section h3 {
+      font-size: 1.5rem;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      color: #00adb5;
+    }
+   
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      color: #00adb5;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .skill-item {
+      display: flex;
+      color: #00adb5;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s;
+    }
+
+    .skill-item:hover {
+      transform: scale(1.1);
+    }
+
+    .skill-item img {
+      width: 60px;
+      height: 60px;
+      color-scheme: #00adb5;
+      margin-bottom: 10px;
+    }
+
+    .skill-item span {
+      font-weight: 500;
+      color: white;
+    }
+  /* Projects Section */
+     .projects-section, .experience-section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .projects-section {
+      background-color: #222;
+    }
+    .experience-section {
+      background-color: #1e1e1e;
+     
+    }
+    .project-card, .experience-item {
+      background-color: #2a2a2a;
+      border-radius: 8px;
+      padding: 30px;
+      margin: 20px auto;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      max-width: 800px;
+      
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .project-card:hover, .experience-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 173, 181, 0.2);
+    }
+    .project-title, .experience-title {
+     
+      font-size: 1.5rem;
+      color: #00adb5;
+    }
+    .project-subtitle {
+      color: #aaa;
+      align-items: center;
+      font-style: italic;
+    }
+    .project-description, .experience-details {
+      color: #ccc;
+      margin-top: 15px;
+    }
+    .project-tech {
+      margin-top: 15px;
+    }
+    .tech-tag {
+      background-color: rgba(0, 173, 181, 0.2);
+      color: #00adb5;
+      padding: 5px 10px;
+      border-radius: 20px;
+      margin-right: 8px;
+      font-size: 0.9rem;
+    }
+    .contact-section {
+      font-family: 'Playfair Display', serif;
+      background: #1e1e1e;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .contact-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: white;
+    }
+    .contact-section p {
+      color: #aaa;
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+    }
+    .social-icon {
+      font-size: 1.5rem;
+      color: #555;
+      background: #eaeaea;
+      padding: 15px;
+      border-radius: 50%;
+      transition: 0.3s ease;
+      text-decoration: none;
+      margin: 0 15px;
+      display: inline-block;
+    }
+    .social-icon:hover {
+      color: white;
+      background: #4a90e2;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #111;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+ 
+    
+    
+
+    /* Education Section */
+    .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 0;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      width: 3px;
+      background-color: #00adb5;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -1.5px;
+      z-index: 1;
+    }
+    
+    .education-item {
+      padding: 20px 40px;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+      margin-bottom: 30px;
+    }
+    
+    .education-item:nth-child(odd) {
+      left: 0;
+      text-align: right;
+      padding-right: 70px;
+    }
+    
+    .education-item:nth-child(even) {
+      left: 50%;
+      text-align: left;
+      padding-left: 70px;
+    }
+    
+    .education-item::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #00adb5;
+      border-radius: 50%;
+      top: 30px;
+      z-index: 2;
+    }
+    
+    .education-item:nth-child(odd)::after {
+      right: -10px;
+    }
+    
+    .education-item:nth-child(even)::after {
+      left: -10px;
+    }
+    
+    .education-content {
+      background-color: #333;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .education-item:hover .education-content {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 173, 181, 0.2);
+    }
+    
+    .education-content h3 {
+      margin-top: 0;
+      color: #00adb5;
+      font-size: 1.4rem;
+    }
+    
+    .education-content h4 {
+      margin: 10px 0;
+      color: #ccc;
+      font-size: 1.1rem;
+    }
+    
+    .education-content p {
+      margin: 5px 0;
+      color: #aaa;
+    }
+    
+    .education-year {
+      position: absolute;
+      top: 30px;
+      font-weight: bold;
+      color: #00adb5;
+      font-size: 1.1rem;
+      z-index: 2;
+      background-color: #252525;
+      padding: 0 10px;
+    }
+    
+    .education-item:nth-child(odd) .education-year {
+      right: -60px;
+    }
+    
+    .education-item:nth-child(even) .education-year {
+      left: -60px;
+    }
+    
+    @media screen and (max-width: 768px) {
+      .timeline::before {
+        left: 31px;
+      }
+      
+      .education-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+        text-align: left;
+      }
+      
+      .education-item:nth-child(odd),
+      .education-item:nth-child(even) {
+        left: 0;
+      }
+      
+      .education-item::after,
+      .education-item:nth-child(odd)::after,
+      .education-item:nth-child(even)::after {
+        left: 21px;
+      }
+      
+      .education-item:nth-child(odd) .education-year,
+      .education-item:nth-child(even) .education-year {
+        left: 70px;
+        right: auto;
+        top: -25px;
+      }
+    }
+
+
+ .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 60px 20px;
+    }
+
+    .contact-left, .contact-right {
+      flex: 1;
+      min-width: 300px;
+      margin: 20px;
+    }
+
+    .contact-left h2 {
+      font-size: 2.5rem;
+      color: #00adb5;
+      margin-bottom: 20px;
+    }
+
+    .contact-left p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      color: #ccc;
+    }
+
+    .contact-info i {
+      margin-right: 10px;
+      color: #00adb5;
+    }
+
+    .contact-info p {
+      margin-bottom: 15px;
+      color: #aaa;
+    }
+
+    .social-icons a {
+      color: #00adb5;
+      margin-right: 20px;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #fff;
+    }
+
+    form {
+      background-color: #252525;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 173, 181, 0.1);
+    }
+
+    form h2 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+      color: #00adb5;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px 18px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 6px;
+      background-color: #1e1e1e;
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    input:focus, textarea:focus {
+      outline: 2px solid #00adb5;
+    }
+
+    button {
+      background: #00adb5;
+      color: #121212;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: #00cfd3;
+      transform: scale(1.05);
+    }
+
+    @media screen and (max-width: 768px) {
+      .contact-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contact-left, .contact-right {
+        max-width: 600px;
+      }
+    }
+
+    
+
+    @media screen and (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      
+      .section-heading,
+      .skills-section h2, 
+      .education-section h2,
+      .experience-section h2 {
+        font-size: 2rem;
+      }
+      
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Yameena Abbas</div>
+    <a href="#about">About Me</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact Me</a>
+  </nav>
+
+  <section id="about">
+    <header>
+      <h1>Hello! I am Yameena Abbas<br>a Computer Science udergraduate</h1>
+      
+          <img src="" alt="Picture">
+        </div>
+      </div>
+    </header>
+  </section>
+
+  <section id="skills" class="skills-section">
+    <h2 class="section-heading">Skills</h2>
+
+    <h3>Languages</h3>
+    <div class="skills-grid">
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"><span>C++</span></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"><span>Java</span></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"><span>JavaScript</span></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"><span>HTML</span></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"><span>CSS</span></div>
+    </div>
+
+    <h3>Frameworks & Libraries</h3>
+    <div class="skills-grid">
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React.js"><span>React.js</span></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"><span>Node.js</span></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js"><span>Express.js</span></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap"><span>Bootstrap</span></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask"><span>Flask</span></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg" alt="Three.js"><span>Three.js</span></div>
+    </div>
+
+    <h3>Databases</h3>
+    <div class="skills-grid">
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"><span>MongoDB</span></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"><span>MySQL</span></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase"><span>Firebase</span></div>
+    </div>
+    <h3>Tools</h3>
+    <div class="skills-grid">
+       <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma"><span>Figma</span></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"><span>Git</span></div>
+      <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="Github"><span>Github</span></div>
+        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code"><span>VS Code</span></div>
+
+     </div>
+
+    <h3>Concepts</h3>
+    <div class="skills-grid">  
+      <div class="skill-item"><span>Data Structures & Algorithms</span></div>
+      <div class="skill-item"><span>Operating Systems</span></div>
+      <div class="skill-item"><span>DBMS</span></div>
+    </div>
+
+    <h3>Soft Skills</h3>
+    <div class="skills-grid">
+      <div class="skill-item"><span>Leadership</span></div>
+      <div class="skill-item"><span>Team Management</span></div>
+      <div class="skill-item"><span>Communication</span></div>
+      <div class="skill-item"><span>Problem-Solving</span></div>
+      <div class="skill-item"><span>Time Management</span></div>
+    </div>
+  </section>
+
+<section id="projects" class="section dark-section">
+  <h2 class="section-heading">Projects</h2>
+    <div class="projects-container">
+      <div class="project-card">
+        <img src="https://camo.githubusercontent.com/0e0a435671b2c8a14397cd82de89a068ca03c4ca35c0a25970f9587b2cac6c61/687474703a2f2f696d672e796f75747562652e636f6d2f76692f4a466a76566d76433370512f302e6a7067" class="project-image">
+        <div class="project-content">
+          <h3 class="project-title">Sorting Visualizer</h3>
+          <span class="project-subtitle">Interactive Algorithm Learning Tool</span>
+          <p class="project-description">
+            Developed an interactive visualizer for six sorting algorithms with real-time animations. Added user controls for array size and speed to enhance engagement.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="project-card">
+        <img src="c:\Users\dell\OneDrive\Pictures\Screenshots\Screenshot 2025-07-13 124206.png" alt="Cosmic Environmental Observatory" class="project-image">
+        <div class="project-content">
+          <h3 class="project-title">Cosmic Environmental Observatory</h3>
+          <span class="project-subtitle">3D Globe Dashboard</span>
+          <p class="project-description">
+            Built a real-time 3D globe displaying data on volcanoes, air quality, and weather. Integrated voice-based AI and animated markers with floating UI panels.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Three.js</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">WebGL</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="project-card">
+        <img src="https://via.placeholder.com/600x400?text=Sentiment+Analysis" alt="Sentiment Analysis Web App" class="project-image">
+        <div class="project-content">
+          <h3 class="project-title">Sentiment Analysis Web App</h3>
+          <span class="project-subtitle">NLP-Based Text Classifier</span>
+          <p class="project-description">
+            Built a machine learning-powered web app to analyze sentiment polarity of user-entered text. Implemented REST APIs for real-time sentiment classification.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Flask</span>
+            <span class="tech-tag">NLTK</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="education-section">
+    <h2 class="section-heading">Education</h2>
+    
+    <div class="timeline">
+      <div class="education-item">
+        <div class="education-content">
+          <h3>University of Lucknow</h3>
+          <h4>Bachelor of Technology in Computer Science Engineering</h4>
+          <p>Currently pursuing my degree with a focus on software development, data structures and algorithms and system design</p>
+          <p>CGPA: 8.35</p>
+        </div>
+        <div class="education-year">2027</div>
+      </div>
+      
+      <div class="education-item">
+        <div class="education-content">
+          <h3>City Montessori School</h3>
+          <h4>Intermediate</h4>
+          <p>Active participant in science fairs and coding competitions</p>
+          <p>Percentage: 95%</p>
+        </div>
+        <div class="education-year">2022</div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="experience" class="section dark-section">
+    <h2 class="section-heading">Experience</h2>
+    
+    <div class="experience-container">
+      <div class="experience-item">
+        <div class="experience-header">
+          <h3 class="experience-title">Frontend Development Intern</h3>
+          <span class="experience-date">June 2025 -Present</span>
+        </div>
+        <div class="experience-company">
+          <i class="fas fa-building"></i> IT Orange Solutions, Lucknow
+        </div>
+        <div class="experience-details">
+          <ul>
+            
+            <li>Created responsive web applications using HTML, CSS and JavaScript and improve user interfaces.</li>
+            <li>Collaborated with UI/UX designers to implement modern, user-friendly interfaces</li>
+            <li>Optimized application performance, reducing load times by 30%</li>
+            
+            <li>Worked with REST APIs to fetch and display dynamic data</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="experience-item">
+        <div class="experience-header">
+          <h3 class="experience-title">Internship Coordination Team Lead</h3>
+          <span class="experience-date">Jan 2024 - Present</span>
+        </div>
+        <div class="experience-company">
+          <i class="fas fa-university"></i> Training and Placement Cell, University of Lucknow
+        </div>
+        <div class="experience-details">
+          
+          <ul>
+            <li>Oversaw placement activities for 100+ students, increasing internship success by 30%.</li>
+            <li>Conducted training workshops on resume building, mock interviews, and portfolio creation</li>
+            <li>Applied organizational and leadership skills to coordinate across departments</li>
+            <li>Managed communication between students and potential employers</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Contact Section -->
+         <section id="contact" class="section dark-section">
+    <h2 class="section-heading">Contact Me</h2>
+<div class="contact-container">
+
+    <!-- Left side -->
+    <div class="contact-left">
+
+      <h2>Let's Connect</h2>
+      
+      <p>I’m open to collaboration, internships, or just a good conversation. Feel free to drop a message!</p>
+
+      <div class="contact-info">
+        <p><i class="fas fa-envelope"></i> yameenaabbas786@gmail.com</p>
+        <p><i class="fas fa-phone"></i> +91-8765534346</p>
+        <p><i class="fas fa-map-marker-alt"></i> Lucknow, India</p>
+      </div>
+
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/yameena-abbas-1a52b4306/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/YameenaAbbas" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com/accounts/onetap/?next=%2F" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <!-- Right side -->
+    <div class="contact-right">
+     <form action="https://formspree.io/f/mqalkgjd" method="POST">
+  <h2>Send a Message</h2>
+  <input type="text" name="name" placeholder="Your Name" required />
+  <input type="email" name="email" placeholder="Your Email" required />
+  <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+  <button type="submit">Send</button>
+</form>
+
+    </div>
+  </div>
+
+
+
+</style>
+
+    </div>
+  </section>
+  <footer>
+    &copy; 2025 Yameena Abbas. All rights reserved.
+  </footer>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</body>
+</html> 
